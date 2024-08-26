@@ -1,18 +1,37 @@
 const Table = ({ sat }) => {
   return (
     <table>
-    <thead>
-     <tr>
-       <th>Header TBD</th>
-     </tr>
-     </thead>
-     <tbody>
-     <tr>
-       <td>Row Data TBD</td>
-     </tr>
-     </tbody>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type of Satellite</th>
+          <th>Launch Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+          {sat.map((data)=>{
+            return( <tr>
+                      <td>{data.name}</td>
+                      <td>{data.type}</td>
+                      <td>{data.launchDate}</td>
+                      <td>{checkStatus(data.operational)}</td>
+                    </tr>
+          );
+          })}
+      </tbody>
    </table>
   );
 };
+
+function checkStatus(status){
+  if(status){
+    return("active");
+  }
+  else{
+    return("inactive");
+  }
+}
+
 
 export default Table;

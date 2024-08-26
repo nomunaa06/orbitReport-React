@@ -7,9 +7,9 @@ import satData from "./components/satData";
 
 function App() {
   const [sat, setSat] = useState(satData);
-// code continues
+
   const orbitTypes = [...new Set(satData.map((data) => data.orbitType))];
-// code continues
+
   const filterByType = (currentType) => {
     const displaySats = satData.filter((newSatDisplay) => {
       return newSatDisplay.orbitType === currentType;

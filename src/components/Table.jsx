@@ -1,4 +1,6 @@
 import './styling.css';
+
+
 const Table = ({ sat }) => {
   return (
     <table>
@@ -16,7 +18,7 @@ const Table = ({ sat }) => {
                       <td>{data.name}</td>
                       <td>{data.type}</td>
                       <td>{data.launchDate}</td>
-                      <td>{checkStatus(data.operational)}</td>
+                      <td>{data.operational ? "Active" : "Inactive"}</td>
                     </tr>
           );
           })}
@@ -25,14 +27,14 @@ const Table = ({ sat }) => {
   );
 };
 
-function checkStatus(status){
-  if(status){
-    return("active");
-  }
-  else{
-    return("inactive");
-  }
-}
+// function checkStatus(status){
+//   if(status){
+//     return("active");
+//   }
+//   else{
+//     return("inactive");
+//   }
+// }
 
 
 export default Table;
